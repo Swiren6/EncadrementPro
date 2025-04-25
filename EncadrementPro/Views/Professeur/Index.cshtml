@@ -1,0 +1,36 @@
+﻿@model IEnumerable<EncadrementPro.Models.Professeur>
+
+@{
+    ViewData["Title"] = "Liste des Professeurs";
+}
+
+<h2>Liste des Professeurs</h2>
+
+<a asp-action="Create" class="btn btn-primary mb-3">Ajouter un professeur</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Spécialité</th>
+            <th>Disponible</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var prof in Model)
+        {
+                <tr>
+                    <td>@prof.Nom</td>
+                    <td>@prof.Email</td>
+                    <td>@prof.Specialite</td>
+                    <td>@(prof.EstDisponible ? "Oui" : "Non")</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@prof.Id" class="btn btn-sm btn-warning">Modifier</a>
+                        <a asp-action="Delete" asp-route-id="@prof.Id" class="btn btn-sm btn-danger">Supprimer</a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>

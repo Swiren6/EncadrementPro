@@ -1,0 +1,36 @@
+﻿@model IEnumerable<EncadrementPro.Models.Reservation>
+
+@{
+    ViewData["Title"] = "Mes Réservations";
+}
+
+<h2>Mes Réservations</h2>
+
+@if (!Model.Any())
+{
+        <p>Aucune réservation trouvée.</p>
+}
+else
+{
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Professeur</th>
+                    <th>Date de Réservation</th>
+                    <th>Créneau</th>
+                    <th>Statut</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var reservation in Model)
+            {
+                    <tr>
+                        <td>@reservation.Professeur.Nom</td>
+                        <td>@reservation.DateReservation.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td>@reservation.Creneau.Horaire</td>
+                        <td>@(reservation.EstConfirmee ? "Confirmée" : "En attente")</td>
+                    </tr>
+            }
+            </tbody>
+        </table>
+}

@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUser>
+
+@{
+    ViewData["Title"] = "Gestion des Utilisateurs";
+}
+
+<h1 class="mb-4">👥 Liste des Utilisateurs</h1>
+
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Email</th>
+            <th>Nom d'utilisateur</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Email</td>
+                <td>@user.UserName</td>
+                <td>
+                    <a asp-action="DetailsUtilisateur" asp-route-id="@user.Id" class="btn btn-info btn-sm">Détails</a>
+
+                    <form asp-action="SupprimerUtilisateur" asp-route-id="@user.Id" method="post" class="d-inline"
+                          onsubmit="return confirm('Confirmer la suppression de cet utilisateur ?');">
+                        <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<EncadrementPro.Models.Projet>
+
+@{
+    ViewData["Title"] = "Liste des Projets";
+}
+
+<h2>📚 Projets des Étudiants</h2>
+
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Étudiant</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var projet in Model)
+        {
+            <tr>
+                <td>@projet.Titre</td>
+                <td>@projet.Description</td>
+                <td>@projet.Etudiant?.UserName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index" class="btn btn-secondary">Retour</a>

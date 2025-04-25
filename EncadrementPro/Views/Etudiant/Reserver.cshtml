@@ -1,0 +1,33 @@
+﻿@model EncadrementPro.Models.Reservation
+
+@{
+    ViewData["Title"] = "Réserver un créneau";
+}
+
+<h2>Réserver un créneau pour le professeur</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="ProfesseurId">Professeur</label>
+        <input type="text" class="form-control" value="@Model.Professeur.Nom" disabled />
+    </div>
+
+    <div class="form-group">
+        <label for="DateReservation">Date de Réservation</label>
+        <input type="datetime-local" class="form-control" id="DateReservation" name="DateReservation" required />
+    </div>
+
+    <div class="form-group">
+        <label for="CreneauId">Créneau</label>
+        <select class="form-control" id="CreneauId" name="CreneauId" required>
+            @foreach (var creneau in Model.Professeur.Disponibilites)
+            {
+                <option value="@creneau.Id">@creneau.Horaire</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Confirmer la réservation</button>
+</form>
+
+<a href="@Url.Action("Index", "Etudiant")" class="btn btn-secondary mt-3">Retour</a>

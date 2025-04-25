@@ -1,0 +1,29 @@
+﻿@model EncadrementPro.Models.Professeur
+
+@{
+    ViewData["Title"] = "Modifier Professeur";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="Nom"></label>
+        <input asp-for="Nom" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Specialite"></label>
+        <input asp-for="Specialite" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="EstDisponible"></label>
+        <input asp-for="EstDisponible" type="checkbox" class="form-check-input" />
+    </div>
+    <button type="submit" class="btn btn-success mt-2">Mettre à jour</button>
+    <a asp-action="Index" class="btn btn-secondary mt-2">Annuler</a>
+</form>

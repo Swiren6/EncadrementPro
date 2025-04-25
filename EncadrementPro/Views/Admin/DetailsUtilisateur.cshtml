@@ -1,0 +1,43 @@
+﻿@using EncadrementPro.Models
+@model ApplicationUser
+@{
+    ViewData["Title"] = "Détails Utilisateur";
+    var roles = ViewBag.Roles as IList<string>;
+}
+
+<h2>Détails de l'utilisateur</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <td>@Model.Id</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>@Model.Email</td>
+    </tr>
+    <tr>
+        <th>Nom d'utilisateur</th>
+        <td>@Model.UserName</td>
+    </tr>
+    <tr>
+        <th>Rôles</th>
+        <td>
+            @if (roles != null && roles.Any())
+            {
+                <ul>
+                    @foreach (var role in roles)
+                    {
+                        <li>@role</li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <em>Aucun rôle assigné</em>
+            }
+        </td>
+    </tr>
+</table>
+
+<a asp-action="Index" class="btn btn-secondary">Retour à la liste</a>

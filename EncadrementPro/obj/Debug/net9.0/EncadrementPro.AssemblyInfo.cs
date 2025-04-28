@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EncadrementPro")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b758c268f42ebf6d0d9440f7943929b7d49ff9a")]
 [assembly: System.Reflection.AssemblyProductAttribute("EncadrementPro")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EncadrementPro")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

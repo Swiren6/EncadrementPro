@@ -295,3 +295,5 @@ C:\Users\HP\source\repos\EncadrementPro\EncadrementPro\obj\Debug\net9.0\refint\E
 C:\Users\HP\source\repos\EncadrementPro\EncadrementPro\obj\Debug\net9.0\EncadrementPro.pdb
 C:\Users\HP\source\repos\EncadrementPro\EncadrementPro\obj\Debug\net9.0\EncadrementPro.genruntimeconfig.cache
 C:\Users\HP\source\repos\EncadrementPro\EncadrementPro\obj\Debug\net9.0\ref\EncadrementPro.dll
+C:\Users\HP\source\repos\EncadrementPro\EncadrementPro\obj\Debug\net9.0\EncadrementPro.sourcelink.json
+C:\Users\HP\source\repos\EncadrementPro\EncadrementPro\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

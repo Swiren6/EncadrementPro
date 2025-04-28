@@ -21,7 +21,6 @@ namespace EncadrementPro.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Always call the base first
             base.OnModelCreating(modelBuilder);
 
             // Seed data
@@ -30,24 +29,6 @@ namespace EncadrementPro.Data
                 new Professeur { Id = 2, Nom = "Dr. Aymen", Email = "Aymen@gmail.com", EstDisponible = false }
             );
 
-            // Configure relationship with ApplicationUser
-            modelBuilder.Entity<Reservation>()
-                .HasOne(r => r.User)
-                .WithMany(u => u.Reservations)
-                .HasForeignKey(r => r.UserId)
-                .IsRequired()
-                .OnDelete(DeleteBehavior.Restrict);
-                
-            // Other relationships
-            modelBuilder.Entity<Reservation>()
-                .HasOne(r => r.Professeur)
-                .WithMany()
-                .HasForeignKey(r => r.ProfesseurId);
-
-            modelBuilder.Entity<Reservation>()
-                .HasOne(r => r.Creneau)
-                .WithMany()
-                .HasForeignKey(r => r.CreneauId);
         }
     }
 }
